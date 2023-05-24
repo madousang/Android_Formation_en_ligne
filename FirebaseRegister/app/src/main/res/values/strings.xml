@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">FirebaseRegister</string>
+    <string name="name">Nom et prenom</string>
+    <string name="Email">Email</string>
+    <string name="User">Pseudo</string>
+    <string name="Pass">Mot de passe</string>
+    <string name="inscrip">Inscription</string>
+    <string name="modif_profil">Modifier son profil</string>
+    <string name="enregistrer_btn">Enregistrer</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="deja_utilisateur">Etes vous utilisateur ? Connexion</string>
+    <string name="conexion">Connexion</string>
+    <string name="s_connect">Se connecter</string>
+    <string name="register">Inscrivez-vous</string>
+    <string name="onlinereg">Préinscription en ligne</string>
+    <string name="nom">Nom</string>
+    <string name="username">username</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="acctext">Se former</string>
+    <string name="btn_prftext">Votre Profil</string>
+    <string name="btn_text_cours_ins">Inscrivez-vous à une formation</string>
+    <string name="textScreen">Bienvenue sur notre site de formation</string>
+    <string name="commencer_la_formation">Commencer la formation</string>
+    <string name="forget_password_detail">fournissez votre compte EMAIL pour lequel vous souhaitez réinitialiser votre mot de passe</string>
+    <string name="enter_phone_number">phone</string>
+    <string name="next_btn">NEXT</string>
+    <string name="enter_mail">Email</string>
+    <string name="forget_npassword">Forget\nPassword</string>
+    <string name="make_selection">Faire une sélection</string>
+    <string name="via_sms">Via sms</string>
+    <string name="via_mail">Via mail</string>
+    <string name="make_selection_detail">Sélectionnez une méthode que nous devons utiliser pour réinitialiser votre mot de passe</string>
+    <string name="new_credentials">Nouvelles informations d\'identification</string>
+    <string name="new_credentials_detail">Votre identité a été vérifiée\nDéfinissez votre nouveau mot de passe</string>
+    <string name="password_updated">Mot de passe mis à jour</string>
+    <string name="password_updated_success_message">Votre mot de passe a été mis à jour</string>
+    <string name="login">CONNEXION\t\t\t</string>
+    <string name="suivez_votre_formation">Suivez votre formation</string>
+    <string name="choisir_une_formation">Choisir une formation</string>
+    <string name="acc1text">en liberté</string>
+    <string name="acc2text">Des formation en ligne pour découvrir, apprendre, progresser et réussir.</string>
+    <string name="acc3text">Veillez choisir une formation en remplissant le formulaire ci-dessouss.</string>
+
+    <array name="Formation">
+        <item>Informatique</item>
+        <item>Télécoms</item>
+        <item>BTP</item>
+        <item>Mécanique</item>
+        <item>Energetique</item>
+        <item>TOPO</item>
+    </array>
+    <array name="Time">
+        <item>3 mois</item>
+        <item>6 mois</item>
+        <item>1 an</item>
+        <item>2 ans</item>
+        <item>3 ans</item>
+        <item>5 ans</item>
+    </array>
+</resources>
