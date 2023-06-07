@@ -44,11 +44,9 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isNameChanged() || isEmailChanged() || isPasswordChanged()) {
-                    passUserData();
+                    Toast.makeText(EditProfileActivity.this, "Les modifications ont été prises en compte", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(EditProfileActivity.this, "Aucune modification effectuée", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(EditProfileActivity.this, FollowingFormation.class);
-                    startActivity(intent);
                 }
             }
         });
@@ -129,41 +127,32 @@ public class EditProfileActivity extends AppCompatActivity {
         editEmail.setText(emailUser);
         editpassword.setText(passwordUser);
     }
-    private void passUserData(){
-        Intent intent = getIntent();
-        String usernameUser = intent.getStringExtra("username").trim();
-        Query checkUserDatabase = reference.orderByChild("username").equalTo(usernameUser);
-
-        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-
-                    String nameFromDB = snapshot.child(usernameUser).child("name").getValue(String.class);
-                    String emailFromDB = snapshot.child(usernameUser).child("email").getValue(String.class);
-                    String passwordFromDB = snapshot.child(usernameUser).child("password").getValue(String.class);
-                    String usernameFromDB = snapshot.child(usernameUser).child("username").getValue(String.class);
-                    String formationNameFromDB = snapshot.child(usernameUser).child("formationName").getValue(String.class);
-                    String formationtimeFromDB = snapshot.child(usernameUser).child("formationtime").getValue(String.class);
-
-
-                    Toast.makeText(EditProfileActivity.this, "Les modifications ont été prises en compte", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(EditProfileActivity.this, FollowingFormation.class);
-
-                    intent.putExtra("name", nameFromDB);
-                    intent.putExtra("email", emailFromDB);
-                    intent.putExtra("username", usernameFromDB);
-                    intent.putExtra("password", passwordFromDB);
-                    intent.putExtra("formationName", formationNameFromDB);
-                    intent.putExtra("formationtime", formationtimeFromDB);
-                    startActivity(intent);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
+//    private void passUserData(){
+//        Intent intent = getIntent();
+//        String usernameUser = intent.getStringExtra("username").trim();
+//        Query checkUserDatabase = reference.orderByChild("username").equalTo(usernameUser);
+//
+//        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if (snapshot.exists()) {
+//
+//                    String nameFromDB = snapshot.child(usernameUser).child("name").getValue(String.class);
+//                    String emailFromDB = snapshot.child(usernameUser).child("email").getValue(String.class);
+//                    String passwordFromDB = snapshot.child(usernameUser).child("password").getValue(String.class);
+//                    String usernameFromDB = snapshot.child(usernameUser).child("username").getValue(String.class);
+//                    String formationNameFromDB = snapshot.child(usernameUser).child("formationName").getValue(String.class);
+//                    String formationtimeFromDB = snapshot.child(usernameUser).child("formationtime").getValue(String.class);
+//
+//
+//                    Toast.makeText(EditProfileActivity.this, "Les modifications ont été prises en compte", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//    }
 }

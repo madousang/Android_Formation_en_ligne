@@ -1,51 +1,55 @@
 package com.example.firebase_register;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-//import android.view.View;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Map;
-import java.util.Objects;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText signupName, signupEmail, signupUsername, signupPassword;
     private TextView loginRedirectText;
     private Button signupButton;
-    private FirebaseDatabase database;
-    private DatabaseReference reference;
-
+    private FirebaseAuth auth;
+    private DatabaseReference database;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        database = FirebaseDatabase.getInstance().getReference("users");
+        auth = FirebaseAuth.getInstance();
+
         signupName = findViewById(R.id.signup_name);
         signupEmail = findViewById(R.id.signup_email);
         signupUsername = findViewById(R.id.signup_username);
         signupPassword = findViewById(R.id.signup_password);
-        signupButton = findViewById(R.id.signup_button);
+        signupButton = findViewById(R.id.s_inscrire);
         loginRedirectText = findViewById(R.id.loginRedirectText);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser(v);
+                registerUser();
             }
         });
 
         loginRedirectText.setOnClickListener(view -> {
-            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+            Intent intent = new Intent(SignupActivity.this, ConnexionActivity.class);
             startActivity(intent);
         });
     }
@@ -110,28 +114,34 @@ public class SignupActivity extends AppCompatActivity {
             return true;
         }
     }
-    public void registerUser(View view) {
-        if(!validateName() |!validatePassword() | !validateEmail() | !validateUsername()) {
+    public void registerUser() {
+        String name = signupName.getText().toString().trim();
+        String email = signupEmail.getText().toString().trim();
+        String username = signupUsername.getText().toString().trim();
+        String password = signupPassword.getText().toString().trim();
+
+        if (!(validateName() | validateEmail() | validateUsername() | validatePassword())) {
             return;
         }
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference("users");
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    HelperClass users = new HelperClass(name, email, username, password);
+                    database.child(username).setValue(users);
 
-        String name = signupName.getText().toString();
-        String email = signupEmail.getText().toString();
-        String username = signupUsername.getText().toString();
-        String password = signupPassword.getText().toString();
+                    Toast.makeText(SignupActivity.this, "Inscription réussie !", Toast.LENGTH_SHORT).show();
 
-        HelperClass users = new HelperClass(name, email, username, password);
-
-        reference.child(username).setValue(users);
-
-        Toast.makeText(SignupActivity.this, "Inscription réussie !", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
-        intent.putExtra("name", name);
-        intent.putExtra("username", username);
-        intent.putExtra("email", email);
-        intent.putExtra("password", password);
-        startActivity(intent);
+                    Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+                    intent.putExtra("name", name);
+                    intent.putExtra("username", username);
+                    intent.putExtra("email", email);
+                    intent.putExtra("password", password);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(SignupActivity.this, "Incription échouée", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

@@ -3,6 +3,15 @@ package com.example.firebase_register;
 public class Formation {
     private String formationName;
     private String formationtime;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String usernameformation) {
+        this.username = usernameformation;
+    }
 
     public Formation(){
 
@@ -16,7 +25,8 @@ public class Formation {
         this.formationtime = formationtime;
     }
 
-    public Formation(String formationName, String formationtime) {
+    public Formation(String formationName, String formationtime, String username) {
+        this.username = username;
         this.formationName = formationName;
         this.formationtime = formationtime;
     }

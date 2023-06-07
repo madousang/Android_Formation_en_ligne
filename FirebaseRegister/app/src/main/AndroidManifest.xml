@@ -16,16 +16,25 @@
         android:theme="@style/Theme.SignupLoginRealtime"
         tools:targetApi="31">
         <activity
-            android:name=".ForgetPasswordSuccessMessage"
+            android:name=".tableau_de_bord.TopoActivity"
             android:exported="false" />
         <activity
-            android:name=".SetNewPassword"
+            android:name=".tableau_de_bord.EnergetiqueActivity"
             android:exported="false" />
         <activity
-            android:name=".MakeSelection"
+            android:name=".tableau_de_bord.TelecomActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgetPassword"
+            android:name=".tableau_de_bord.GCivilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.MecaniqueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.InformatiqueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoursActivity"
             android:exported="false" />
         <activity
             android:name=".FollowingFormation"
@@ -52,17 +61,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfileActivity"
-            android:exported="false"/>
-        <activity
             android:name=".SignupActivity"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity
+            android:name=".ConnexionActivity"
+            android:exported="false" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false"/>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

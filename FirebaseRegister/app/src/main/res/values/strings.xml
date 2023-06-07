@@ -41,6 +41,10 @@
     <string name="acc1text">en liberté</string>
     <string name="acc2text">Des formation en ligne pour découvrir, apprendre, progresser et réussir.</string>
     <string name="acc3text">Veillez choisir une formation en remplissant le formulaire ci-dessouss.</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="formation">Formation</string>
+    <string name="dur_e">Durée</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié</string>
 
     <array name="Formation">
         <item>Informatique</item>

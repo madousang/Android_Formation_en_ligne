@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/pagebkg"
-    tools:context=".LoginActivity">
+    tools:context=".ConnexionActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -40,10 +40,22 @@
                 android:layout_height="50dp"
                 android:id="@+id/login_username"
                 android:background="@drawable/lavender_border"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="@string/User"
                 android:drawableLeft="@drawable/ic_baseline_person_pin_24"
+                android:drawablePadding="8dp"
+                android:textColor="@color/grey"
+                android:drawableStart="@drawable/ic_baseline_person_pin_24" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/login_email_"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="@string/Email"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
 
@@ -62,13 +74,24 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/s_connect"
-                android:id="@+id/login_button"
+                android:id="@+id/s_connect"
+                android:layout_gravity="center"
                 android:textSize="18sp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 app:cornerRadius = "20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mot_d_pass_oubli"
+                android:text="@string/mot_de_passe_oubli"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/lavender"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,4 +108,4 @@
 
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+</RelativeLayout>
