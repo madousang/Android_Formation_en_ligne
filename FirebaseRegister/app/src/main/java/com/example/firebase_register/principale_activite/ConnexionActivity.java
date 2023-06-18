@@ -1,4 +1,4 @@
-package com.example.firebase_register;
+package com.example.firebase_register.principale_activite;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firebase_register.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -102,7 +103,7 @@ public class ConnexionActivity extends AppCompatActivity {
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ConnexionActivity.this, SignupActivity.class));
+                startActivity(new Intent(ConnexionActivity.this, InscriptionActivity.class));
             }
         });
     }
@@ -120,7 +121,7 @@ public class ConnexionActivity extends AppCompatActivity {
     private Boolean validatePassword(){
         String val = loginPassword.getText().toString();
         if (val.isEmpty()){
-            loginPassword.setError("Ce champx ne peut pas être vide");
+            loginPassword.setError("Ce champ ne peut pas être vide");
             return false;
         } else {
             loginPassword.setError(null);

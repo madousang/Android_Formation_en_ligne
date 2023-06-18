@@ -3,7 +3,7 @@
     <item
         android:id="@+id/bottom_home"
         android:icon="@drawable/baseline_home_24"
-        android:title="Home" />
+        android:title="Accueil" />
     <item
         android:id="@+id/bottom_cours"
         android:icon="@drawable/baseline_apps_24"
@@ -12,4 +12,8 @@
         android:id="@+id/bottom_profil"
         android:icon="@drawable/baseline_account_circle_24"
         android:title="Profil"/>
+    <item
+        android:id="@+id/bottom_parametre"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Paramètres"/>
 </menu>

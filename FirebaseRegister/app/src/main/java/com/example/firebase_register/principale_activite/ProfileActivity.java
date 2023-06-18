@@ -1,12 +1,13 @@
-package com.example.firebase_register;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.firebase_register.principale_activite;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.firebase_register.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -42,6 +43,18 @@ public class ProfileActivity extends AppCompatActivity {
                     intent2.putExtra("formationName", formationNameUser1);
                     intent2.putExtra("formationtime", formationtimeUser1);
                     startActivity(intent2);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_parametre:
+                    showUserData2();
+                    Intent intent4 = new Intent(getApplicationContext(), ParametresActivity.class);
+                    intent4.putExtra("name", nameUser1);
+                    intent4.putExtra("email", emailUser1);
+                    intent4.putExtra("username", usernameUser1);
+                    intent4.putExtra("formationName", formationNameUser1);
+                    intent4.putExtra("formationtime", formationtimeUser1);
+                    startActivity(intent4);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;

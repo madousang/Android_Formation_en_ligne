@@ -1,4 +1,4 @@
-package com.example.firebase_register;
+package com.example.firebase_register.principale_activite;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firebase_register.UsersClass;
+import com.example.firebase_register.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,17 +21,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignupActivity extends AppCompatActivity {
+public class InscriptionActivity extends AppCompatActivity {
     private EditText signupName, signupEmail, signupUsername, signupPassword;
     private TextView loginRedirectText;
     private Button signupButton;
     private FirebaseAuth auth;
     private DatabaseReference database;
+    private String nameFromDB, emailFromDB, usernameFromDB, passwordFromDB;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_inscription);
 
         database = FirebaseDatabase.getInstance().getReference("users");
         auth = FirebaseAuth.getInstance();
@@ -49,7 +52,7 @@ public class SignupActivity extends AppCompatActivity {
         });
 
         loginRedirectText.setOnClickListener(view -> {
-            Intent intent = new Intent(SignupActivity.this, ConnexionActivity.class);
+            Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
             startActivity(intent);
         });
     }
@@ -127,19 +130,19 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    HelperClass users = new HelperClass(name, email, username, password);
+                    UsersClass users = new UsersClass(name, email, username, password);
                     database.child(username).setValue(users);
 
-                    Toast.makeText(SignupActivity.this, "Inscription réussie !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InscriptionActivity.this, "Inscription réussie !", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(InscriptionActivity.this, HomeActivity.class);
                     intent.putExtra("name", name);
                     intent.putExtra("username", username);
                     intent.putExtra("email", email);
                     intent.putExtra("password", password);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(SignupActivity.this, "Incription échouée", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InscriptionActivity.this, "Incription échouée", Toast.LENGTH_SHORT).show();
                 }
             }
         });

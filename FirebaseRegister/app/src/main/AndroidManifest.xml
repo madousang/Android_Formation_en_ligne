@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,7 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SignupLoginRealtime"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".principale_activite.HistoriquesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".principale_activite.ParametresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.DroitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.ChimieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.PhysiqueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.DataScienceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.EconomieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tableau_de_bord.MicroPythonActivity"
+            android:exported="false" />
         <activity
             android:name=".tableau_de_bord.TopoActivity"
             android:exported="false" />
@@ -34,14 +58,14 @@
             android:name=".tableau_de_bord.InformatiqueActivity"
             android:exported="false" />
         <activity
-            android:name=".CoursActivity"
+            android:name=".principale_activite.CoursActivity"
             android:exported="false" />
         <activity
-            android:name=".FollowingFormation"
+            android:name=".principale_activite.FollowingFormation"
             android:exported="false" />
         <activity
-            android:name=".HomeScreen"
-            android:exported="false">
+            android:name=".principale_activite.HomePage"
+            android:exported="false" >
             <intent-filter>
                 <action android:name="android.intent.action.CONNEXIONACTIVITY" />
 
@@ -49,11 +73,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".principale_activite.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
-            android:exported="true">
+            android:name=".principale_activite.DemarrageActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,16 +85,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".principale_activite.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".principale_activite.InscriptionActivity"
             android:exported="false" />
         <activity
-            android:name=".ConnexionActivity"
+            android:name=".principale_activite.ConnexionActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".principale_activite.ProfileActivity"
             android:exported="false" />
 
         <meta-data

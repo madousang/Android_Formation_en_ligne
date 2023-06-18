@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/profilebkg"
-    tools:context=".ProfileActivity">
+    tools:context=".principale_activite.ProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

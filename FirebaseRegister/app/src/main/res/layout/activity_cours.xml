@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CoursActivity">
+    tools:context=".principale_activite.CoursActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="Oneline"
+                android:text="Trouver"
                 android:textColor="@color/lavender"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toStartOf="@+id/firstformationImage"
@@ -32,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/firstformationDesc"
-                android:text="Formation step by step"
+                android:text="Une formation en ligne"
                 android:textSize="14sp"
                 android:layout_marginStart="18dp"
                 android:textColor="@color/lavender"
@@ -44,7 +44,7 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:id="@+id/firstformationImage"
-                android:src="@drawable/img_7"
+                android:src="@drawable/img_2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="16dp"
@@ -64,7 +64,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/informatiqueCard"
+                    android:id="@+id/MicroPythonCard"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     app:cardElevation="20dp"
@@ -76,7 +76,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/informatik"
-                            android:text="Informatique"
+                            android:text="MicroPython"
                             android:textSize="20sp"
                             android:textColor="@color/lavender"
                             android:fontFamily="@font/poppins_light"
@@ -86,6 +86,234 @@
 
                         <ImageView
                             android:id="@+id/clothingImage"
+                            android:layout_width="161dp"
+                            android:layout_height="64dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/micropython" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/economieCard"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/elecName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/mecanique"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Economie"
+                            android:textColor="@color/lavender"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:layout_width="161dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/mecanique"
+                            android:src="@drawable/economie"
+                            android:layout_marginTop="15dp"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:id="@+id/row2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row1">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/DataScienceCard"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/homeName"
+                            android:text="Data Science"
+                            android:textSize="20sp"
+                            android:textColor="@color/lavender"
+                            android:fontFamily="@font/poppins_light"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/btp"/>
+                        <ImageView
+                            android:layout_width="161dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/btp"
+                            android:src="@drawable/datascience"
+                            android:layout_marginTop="15dp"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/physiqueCard"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/beautyName"
+                            android:text="Physique"
+                            android:textSize="20sp"
+                            android:textColor="@color/lavender"
+                            android:fontFamily="@font/poppins_light"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/energetique"/>
+                        <ImageView
+                            android:layout_width="161dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/energetique"
+                            android:src="@drawable/physique"
+                            android:layout_marginTop="15dp"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:id="@+id/row3"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row2">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/chimieCard"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/pharmName"
+                            android:text="Chimie"
+                            android:textSize="20sp"
+                            android:textColor="@color/lavender"
+                            android:fontFamily="@font/poppins_light"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/telecom"/>
+                        <ImageView
+                            android:layout_width="161dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/telecom"
+                            android:src="@drawable/chimie"
+                            android:layout_marginTop="15dp"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/droitCard"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/grocName"
+                            android:text="Droit"
+                            android:textSize="20sp"
+                            android:textColor="@color/lavender"
+                            android:fontFamily="@font/poppins_light"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/topo"/>
+                        <ImageView
+                            android:layout_width="161dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/topo"
+                            android:src="@drawable/droit"
+                            android:layout_marginTop="15dp"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:id="@+id/row4"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row3">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/informatiqueCard"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/informatik1"
+                            android:text="Informatique"
+                            android:textSize="20sp"
+                            android:textColor="@color/lavender"
+                            android:fontFamily="@font/poppins_light"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/clothingImage1"/>
+
+                        <ImageView
+                            android:id="@+id/clothingImage1"
                             android:layout_width="161dp"
                             android:layout_height="64dp"
                             android:layout_alignParentStart="true"
@@ -109,10 +337,10 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/elecName"
+                            android:id="@+id/elecName1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/mecanique"
+                            android:layout_below="@+id/mecanique1"
                             android:layout_marginTop="10dp"
                             android:layout_centerHorizontal="true"
                             android:fontFamily="@font/poppins_light"
@@ -123,7 +351,7 @@
                         <ImageView
                             android:layout_width="161dp"
                             android:layout_height="64dp"
-                            android:id="@+id/mecanique"
+                            android:id="@+id/mecanique1"
                             android:src="@drawable/mecanique"
                             android:layout_marginTop="15dp"
                             android:layout_centerHorizontal="true"/>
@@ -133,14 +361,14 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:id="@+id/row2"
+                android:id="@+id/row5"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/row1">
+                app:layout_constraintTop_toBottomOf="@id/row4">
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -155,18 +383,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/homeName"
+                            android:id="@+id/homeName1"
                             android:text="Genie Civil"
                             android:textSize="20sp"
                             android:textColor="@color/lavender"
                             android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="10dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/btp"/>
+                            android:layout_below="@+id/btp1"/>
                         <ImageView
                             android:layout_width="161dp"
                             android:layout_height="64dp"
-                            android:id="@+id/btp"
+                            android:id="@+id/btp1"
                             android:src="@drawable/btp"
                             android:layout_marginTop="15dp"
                             android:layout_centerHorizontal="true"/>
@@ -186,18 +414,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/beautyName"
+                            android:id="@+id/beautyName1"
                             android:text="Energetique"
                             android:textSize="20sp"
                             android:textColor="@color/lavender"
                             android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="10dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/energetique"/>
+                            android:layout_below="@+id/energetique1"/>
                         <ImageView
                             android:layout_width="161dp"
                             android:layout_height="64dp"
-                            android:id="@+id/energetique"
+                            android:id="@+id/energetique1"
                             android:src="@drawable/energetique"
                             android:layout_marginTop="15dp"
                             android:layout_centerHorizontal="true"/>
@@ -207,14 +435,14 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:id="@+id/row3"
+                android:id="@+id/row6"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/row2">
+                app:layout_constraintTop_toBottomOf="@id/row5">
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -229,18 +457,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/pharmName"
+                            android:id="@+id/pharmName1"
                             android:text="Telecoms"
                             android:textSize="20sp"
                             android:textColor="@color/lavender"
                             android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="10dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/telecom"/>
+                            android:layout_below="@+id/telecom1"/>
                         <ImageView
                             android:layout_width="161dp"
                             android:layout_height="64dp"
-                            android:id="@+id/telecom"
+                            android:id="@+id/telecom1"
                             android:src="@drawable/telecom"
                             android:layout_marginTop="15dp"
                             android:layout_centerHorizontal="true"/>
@@ -260,24 +488,25 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/grocName"
+                            android:id="@+id/grocName1"
                             android:text="Topographie"
                             android:textSize="20sp"
                             android:textColor="@color/lavender"
                             android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="10dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/topo"/>
+                            android:layout_below="@+id/topo1"/>
                         <ImageView
                             android:layout_width="161dp"
                             android:layout_height="64dp"
-                            android:id="@+id/topo"
+                            android:id="@+id/topo1"
                             android:src="@drawable/topo"
                             android:layout_marginTop="15dp"
                             android:layout_centerHorizontal="true"/>
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/pagebkg"
-    tools:context=".EditProfileActivity">
+    tools:context=".principale_activite.EditProfileActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

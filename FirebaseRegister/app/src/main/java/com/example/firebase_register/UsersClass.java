@@ -1,6 +1,6 @@
 package com.example.firebase_register;
 
-public class HelperClass {
+public class UsersClass {
     String name, email, username, password;
     public String getName() {
         return name;
@@ -34,13 +34,13 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass(String name, String email, String username, String password) {
+    public UsersClass(String name, String email, String username, String password) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
     }
 
-    public HelperClass() {
+    public UsersClass() {
     }
 }

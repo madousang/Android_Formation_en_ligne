@@ -8,7 +8,7 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingTop="5dp"
-    tools:context=".tableau_de_bord.TelecomActivity">
+    tools:context=".tableau_de_bord.DroitActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,21 +19,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/TelecomsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:id="@+id/DroitTitle"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:text="Télécoms"
+                android:text="Droit pour tous"
                 android:textColor="@color/lavender"
                 android:textSize="36sp" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,12 +46,12 @@
                     android:layout_marginRight="5dp"
                     app:drawableLeftCompat="@drawable/ic_baseline_access_time_filled_24" />
                 <TextView
-                    android:id="@+id/dureeTelecoms"
+                    android:id="@+id/dureeDroit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:fontFamily="@font/poppins_light"
-                    android:layout_weight="2"/>
+                    android:layout_weight="2" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
                     android:drawablePadding="8dp"
                     app:drawableLeftCompat="@drawable/baseline_av_timer_24"/>
                 <TextView
-                    android:id="@+id/rythmeTelecoms"
+                    android:id="@+id/rythmeDroit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
-                android:text="@string/textTelecoms"/>
+                android:text="@string/textDroit"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,7 +98,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/prerequisTelecoms"
+                android:text="@string/prerequisDroit"
                 android:fontFamily="@font/poppins_light" />
         </LinearLayout>
         <LinearLayout
@@ -116,7 +116,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textTelecomsCer"
+                android:text="@string/textDroitCer"
                 android:fontFamily="@font/poppins_light" />
         </LinearLayout>
         <LinearLayout
@@ -134,11 +134,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textTelecomPlan"
+                android:text="@string/textDroitPlan"
                 android:fontFamily="@font/poppins_light" />
         </LinearLayout>
         <Button
-            android:id="@+id/btnTelecoms"
+            android:id="@+id/btnDroit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="suivre la formation"

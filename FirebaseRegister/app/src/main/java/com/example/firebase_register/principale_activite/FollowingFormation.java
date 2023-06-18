@@ -1,18 +1,31 @@
-package com.example.firebase_register;
+package com.example.firebase_register.principale_activite;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.firebase_register.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FollowingFormation extends AppCompatActivity {
      String nameUser, emailUser, usernameUser, formationNameUser, formationtimeUser;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_following_formation);
+
+        Button buttonFollow = findViewById(R.id.buttonFollowing);
+        buttonFollow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(FollowingFormation.this, "Suivie de la Formation", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -40,6 +53,18 @@ public class FollowingFormation extends AppCompatActivity {
                     intent2.putExtra("formationName", formationNameUser);
                     intent2.putExtra("formationtime", formationtimeUser);
                     startActivity(intent2);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_parametre:
+                    showUserData();
+                    Intent intent3 = new Intent(getApplicationContext(), ParametresActivity.class);
+                    intent3.putExtra("name", nameUser);
+                    intent3.putExtra("email", emailUser);
+                    intent3.putExtra("username", usernameUser);
+                    intent3.putExtra("formationName", formationNameUser);
+                    intent3.putExtra("formationtime", formationtimeUser);
+                    startActivity(intent3);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
